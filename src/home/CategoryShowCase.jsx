@@ -8,7 +8,7 @@ const ProductData = [
     {
         imgUrl: 'src/assets/images/categoryTab/Long dress with an outside back with multicolored stripes.jpg',
         cate: 'Dress',
-        title: 'Long dress with an outside back with multicolored stripes',
+        title: 'Long dress with outside back',
         author: 'assets/images/course/author/01.jpg',
         brand: 'attrattivo',
         price: '6,200.00 ALL',
@@ -26,7 +26,7 @@ const ProductData = [
     {
         imgUrl: 'src/assets/images/categoryTab/Blue denim shirt with short sleeves and floral details.webp',
         cate: 'Shirt',
-        title: 'Blue denim shirt with short sleeves and floral details',
+        title: 'Blue denim shirt with short sleeves',
         author: 'src/assets/images/categoryTab/brand/apple.png',
         brand: 'attrattivo',
         price: '5,400.00 ALL',
@@ -35,7 +35,7 @@ const ProductData = [
     {
         imgUrl: 'src/assets/images/categoryTab/White jumpsuit with blue and green prints with slippers.webp',
         cate: 'Jumpsuit',
-        title: 'White jumpsuit with blue and green prints with slippers',
+        title: 'White jumpsuit with blue and green prints',
         author: 'assets/images/course/author/04.jpg',
         brand: 'attrattivo',
         price: '7,700.00 ALL',
@@ -44,7 +44,7 @@ const ProductData = [
     {
         imgUrl: 'src/assets/images/categoryTab/Long brown and green zhapone dress with front buttons and belt.webp',
         cate: 'Dress',
-        title: 'Long brown and green zhapone dress with front buttons and belt',
+        title: 'Long brown and green zhapone dress',
         author: 'assets/images/course/author/05.jpg',
         brand: 'attrattivo',
         price: '9,200.00 ALL',
@@ -62,7 +62,7 @@ const ProductData = [
     {
         imgUrl: 'src/assets/images/categoryTab/White cotton blouse with short sleeves with blue flowers.webp',
         cate: 'Shirt',
-        title: 'White cotton blouse with short sleeves with blue flowers ',
+        title: 'White cotton blouse with short sleeves',
         author: 'assets/images/course/author/01.jpg',
         brand: 'ALE',
         price: '3,100.00 ALL',
@@ -71,7 +71,7 @@ const ProductData = [
     {
         imgUrl: 'src/assets/images/categoryTab/Short pink dress.webp',
         cate: 'Dress',
-        title: 'Short pink dress',
+        title: 'Short pink dress ',
         author: 'assets/images/course/author/02.jpg',
         brand: 'Only',
         price: '$2,300.00',
@@ -83,7 +83,6 @@ const ProductData = [
 const CategoryShowCase = () => {
     const [items, setItems] = useState(ProductData)
 
-    //    category baded filtering
     const filterItem = (categItem) => {
         const updateItems = ProductData.filter((curElem) => {
             return curElem.cate === categItem;
