@@ -6,9 +6,11 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <NavItems/>
-      <Outlet />
-      <Footer/>
+      <NavItems />
+      <div className='min-vh-100'>
+        <Outlet />
+      </div>
+      <Footer />
     </>
   )
 }
