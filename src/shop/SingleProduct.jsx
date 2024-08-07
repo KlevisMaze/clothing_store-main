@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import PageHeader from '../components/PageHEader';
 import { Swiper, SwiperSlide } from "swiper/react";
+import Review from './Review';
 
 // Import Swiper styles
 import "swiper/css";
@@ -83,7 +84,7 @@ const SingleProduct = () => {
                                     </div>
                                 </div>
                                 <div className='review'>
-                                    Review
+                                    <Review/>
                                 </div>
                             </article>
                         </div>
