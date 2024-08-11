@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react'
-import PageHEader from '../components/PageHEader'
+import PageHeader from '../components/PageHeader'
 
 
 
@@ -46,7 +46,7 @@ const filterItem = (curcat) => {
 
     return (
         <div>
-            <PageHEader title="Our Shop Page" curPage="Shop" />
+            <PageHeader title="Our Shop Page" curPage="Shop" />
             {/*shop page content*/}
             <div className='shop-page padding-tb'>
                 <div className="container">
