@@ -1,10 +1,10 @@
 import React from 'react'
-import PageHEader from '../components/PageHEader'
+import PageHeader from '../components/PageHeader'
 
 const Sale = () => {
   return (
     <div>
-      <PageHEader title="Sales" curPage="Sale"/>
+      <PageHeader title="Sale Page" curPage="Sales"/>
     </div>
   )
 }
