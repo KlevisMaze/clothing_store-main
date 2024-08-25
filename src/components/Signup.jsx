@@ -1,42 +1,17 @@
 import React, { useContext, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
-import { useLocation, useNavigate, Link, Navigate } from 'react-router-dom';
-
-const title = "Login";
+const title = "Register";
 const socialTitle = "Login with Social Media"
-const btntext = "Login Now"
+const btntext = "Signup Now"
 
-const socialList = [{ iconName: 'icofont-facebook', siteLink: '#', className: 'facebook', },
-{ iconName: 'icofont-twitter', siteLink: '#', className: 'twitter', },
-{ iconName: 'icofont-linkedin', siteLink: '#', className: 'linkedin', },
-{ iconName: 'icofont-instagram', siteLink: '#', className: 'instagram', },
-{ iconName: 'icofont-pinterest', siteLink: '#', className: 'pinterest', },
-]
-const Login = () => {
+export const Signup = () => {
     const [errorMessage, seterrorMessage] = useState("");
-    const { signUpWithGmail, login } = useContext(AuthContext);
+    const { signUpWithGmail, createUser} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || "/";
-
-    const handleLogin = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        // console.log(form);
-        const email = form.email.value;
-        const password = form.password.value
-        // console.log(email, password);
-        login(email, password).then((result) => {
-            const user = result.user;
-            alert("Login Successfull!")
-            navigate(from, { replace: true })
-        }).catch((error) => {
-            const errorMsg = error.message;
-            seterrorMessage("Please provide valid email and password")
-        })
-
-    }
 
     const handleRegister = () => {
         signUpWithGmail().then((result) => {
@@ -47,19 +22,47 @@ const Login = () => {
             seterrorMessage("Please provide valid email and password")
         })
     }
+    const handleSignup =(event) => {
+        event.preventDefault();
+        const form = event.target;
+        //console.log(form)
+        const email = form.email.value;
+        const password = form.password.value;
+        const confirmPassword = form.confirmPassword.value;
+        // console.log(email, password, confirmPassword)
+        if (password !== confirmPassword){
+            seterrorMessage("Password doesn't match! Please provide a correct password")
+        } else {
+            seterrorMessage("");
+            createUser(email, password).then((userCredential) => {
+                const user = userCredential.user;
+                alert("Account created successfully!!!")
+                navigate(from, {replace: true})
+            }).catch((error) => {
+                console.log(error.message);
+                alert(`${error.message}`)
+            })
 
-    return (
-        <div>
-            <div className='login-section padding-tb section-bg'>
+        }
+
+    }
+  return (
+    <div className='login-section padding-tb section-bg'>
                 <div className="container">
                     <div className="account-wrapper">
                         <h3 className='title'>{title}</h3>
-                        <form className='account-form' onSubmit={handleLogin}>
+                        <form className='account-form' onSubmit={handleSignup}>
+                            <div className='form-group'>
+                                <input type='text' name='name' id='name' placeholder='User Name *' required></input>
+                            </div>
                             <div className='form-group'>
                                 <input type='email' name='email' id='email' placeholder='Email Address *' required></input>
                             </div>
                             <div className='form-group'>
                                 <input type='password' name='password' id='password' placeholder='Password *' required></input>
+                            </div>
+                            <div className='form-group'>
+                                <input type='password' name='confirmPassword' id='confirmPassword' placeholder='Confirm Password *' required></input>
                             </div>
                             {/* showing message */}
                             <div>
@@ -71,15 +74,7 @@ const Login = () => {
                                     )
                                 }
                             </div>
-                            <div className='form-group'>
-                                <div className='d-flex justify-content-between flex-wrap pt-sm-2'>
-                                    <div className='checkgroup'>
-                                        <input type='checkbox' name='remember' id='remember'></input>
-                                        <label htmlFor='remember'>Remember Me</label>
-                                    </div>
-                                    <Link to="/forgotpass">Forgot Password?</Link>
-                                </div>
-                            </div>
+                            
                             <div className='form-group'>
                                 <button className='d-block lab-btn'>
                                     <span>{btntext}</span>
@@ -90,7 +85,7 @@ const Login = () => {
                         {/* account button */}
                         <div className='account-bottom'>
                             <span className='d-block cate pt-10'>
-                                Do Not Have an Account? <Link to="/sign-up">Sign Up</Link>
+                               Have an Account? <Link to="/login">Login</Link>
                             </span>
                             <span className='or'>
                                 <span>Or</span>
@@ -121,8 +116,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    )
+  )
 }
 
-export default Login
+export default Signup
