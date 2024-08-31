@@ -3,6 +3,7 @@ import PageHeader from '../components/PageHeader';
 import { Link } from 'react-router-dom';
 import delImgUrl from "../assets/images/shop/del.png";
 import CheckOutPage from './CheckOutPage';
+import Shop from './Shop';
 
 export const CartPage = () => {
     const [cartItems, setCartItems] = useState([]);
@@ -179,7 +180,7 @@ export const CartPage = () => {
     // Calculate shipping cost based on subtotal
     const calculateShipping = (subtotal) => {
         const freeShippingThreshold = 6000;
-        const shippingCost = 200;
+        const shippingCost = 300;
 
         if (subtotal > freeShippingThreshold) {
             return 0; // Free shipping for orders above the threshold
