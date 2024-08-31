@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const desc = "Atra product"
 
 const ProductDisplay = ({ item }) => {
-    // console.log(item)
+    console.log(item)
     const { name, id, price, seller, ratingsCount, quantity, img } = item;
 
     const [prequantity, setQuantity] = useState(quantity);

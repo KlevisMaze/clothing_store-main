@@ -19,7 +19,7 @@ export const Signup = () => {
             navigate(from, { replace: true })
         }).catch((error) => {
             const errorMsg = error.message;
-            seterrorMessage("Please provide valid email and password")
+            seterrorMessage("Please provide a valid email and password")
         })
     }
     const handleSignup =(event) => {
@@ -102,7 +102,7 @@ export const Signup = () => {
                                 <li>
                                     <a href='/' className='instagram'><i className='icofont-instagram'></i></a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <a href='/' className='twitter'><i className='icofont-twitter'></i></a>
                                 </li>
                                 <li>
@@ -110,7 +110,7 @@ export const Signup = () => {
                                 </li>
                                 <li>
                                     <a href='/' className='pinterest'><i className='icofont-pinterest'></i></a>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
