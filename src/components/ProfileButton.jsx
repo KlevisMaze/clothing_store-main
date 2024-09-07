@@ -9,12 +9,13 @@ const ProfileButton = () => {
     return (
         <Dropdown alignRight>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                {user?.displayName || "Profile"}
+                {user?.displayName || "My Account"}
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/profile">View Profile</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/settings">Settings</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/settings">My Orders</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
             </Dropdown.Menu>
