@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
-import Settings from './Settings';
 
 const ProfileButton = () => {
     const { user, logout } = useContext(AuthContext);
@@ -15,7 +14,7 @@ const ProfileButton = () => {
 
             <Dropdown.Menu>
                 <Dropdown.Item as={Link} to="/profile">View Profile</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/Settings">Settings</Dropdown.Item>
+                <Dropdown.Item as={Link} to="/settings">Settings</Dropdown.Item>
                 <Dropdown.Item as={Link} to="/myOrders">My Orders</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
