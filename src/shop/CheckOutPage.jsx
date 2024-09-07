@@ -136,16 +136,16 @@ const CheckOutPage = () => {
                                             </div>
                                             <div className='form mt-3'>
                                                 <div className='inputbox'>
-                                                    <input type='text' name='name' id='name' className='form-control' required></input>
+                                                    <input type='text' name='email' id='email' className='form-control' required></input>
                                                     <span>Enter Your Email</span>
                                                 </div>
                                                 <div className='inputbox'>
-                                                    <input type='text' name='number' id='number' className='form-control' required></input>
+                                                    <input type='text' name='name' id='name' className='form-control' required></input>
                                                     <span>Your Name</span>
                                                 </div>
                                                 <div className='d-flex flex-row'>
                                                     <div className='inputbox'>
-                                                        <input type='text' name='number' id='number' min="1" max="999" className='form-control' required></input>
+                                                        <input type='text' name='text' id='text' min="1" max="999" className='form-control' required></input>
                                                         <span>Extra Info</span>
                                                     </div>
                                                     <div className='inputbox'>
@@ -154,7 +154,7 @@ const CheckOutPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className='px-5 pay'>
-                                                    <button className='btn btn-success btn-block' onClick={handleOrderConfirm}>Add Paypal</button>
+                                                    <button className='btn btn-success btn-block' onClick={handleOrderConfirm}>Order Now!</button>
 
                                                 </div>
                                             </div>
@@ -163,6 +163,48 @@ const CheckOutPage = () => {
 
 
                                     {/* cod content */}
+                                    <div className={`tab-pane fade ${activeTab === "cod" ? "show active" : ""}`}
+                                        id='cod'
+                                        role='tabpanel'
+                                        aria-labelledby='cod-tab'>
+                                            <div className='mt-4 mx-4'>
+                                            <div className='text-center'>
+                                                <h5>Cash on Delivery Account Info</h5>
+                                            </div>
+                                            <div className='form mt-3'>
+                                                <div className='inputbox'>
+                                                    <input type='text' name='name' id='name' className='form-control' required></input>
+                                                    <span>Enter Your Full Name</span>
+                                                </div>
+                                                <div className='inputbox'>
+                                                    <input type='number' name='number' id='number' className='form-control' required></input>
+                                                    <span>Enter Your Phone Number</span>
+                                                </div>
+                                                <div className='inputbox'>
+                                                    <input type='text' name='email' id='email' className='form-control' required></input>
+                                                    <span>Enter Your Email</span>
+                                                </div>
+                                                <div className='d-flex flex-row'>
+                                                    <div className='inputbox'>
+                                                        <input type='text' name='text' id='text' min="1" max="999" className='form-control' required></input>
+                                                        <span>Street</span>
+                                                    </div>
+                                                    <div className='inputbox'>
+                                                        <input type='text' name='text' id='text' min="1" max="999" className='form-control' required></input>
+                                                        <span>City</span>
+                                                    </div>
+                                                    <div className='inputbox'>
+                                                        <input type='text' name='text' id='text' min="1" max="999" className='form-control' required></input>
+                                                        <span>Zip Code</span>
+                                                    </div>
+                                                </div>
+                                                <div className='px-5 pay'>
+                                                    <button className='btn btn-success btn-block' onClick={handleOrderConfirm}>Order Now!</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                                  {/* payment disclaimer */}
