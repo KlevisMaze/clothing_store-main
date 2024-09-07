@@ -19,7 +19,7 @@ export const Signup = () => {
             navigate(from, { replace: true })
         }).catch((error) => {
             const errorMsg = error.message;
-            seterrorMessage("Please provide a valid email and password")
+            seterrorMessage("Please provide valid email and password")
         })
     }
     const handleSignup =(event) => {
