@@ -2,7 +2,12 @@
 
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-const desc = "Atra product"
+const desc = "Atra Albania"
+
+const productData = {
+    size: ["S", "M", "L", "XL", "XXL"],
+    color: ["Pink", "Ash", "Red", "White", "Blue",]
+};
 
 const ProductDisplay = ({ item }) => {
     console.log(item)
@@ -10,15 +15,15 @@ const ProductDisplay = ({ item }) => {
 
     const [prequantity, setQuantity] = useState(quantity);
     const [coupon, setCoupon] = useState("");
-    const [size, setSize] = useState("Select Size");
-    const [color, setColor] = useState("Select Color");
+    const [selectedSize, setSelectedSize] = useState("Select Size");
+    const [selectedColor, setSelectedColor] = useState("Select Color");
 
     const handleSizeChange = (e) => {
-        setSize(e.target.value);
+        setSelectedSize(e.target.value);
     }
 
     const handleColorChange = (e) => {
-        setColor(e.target.value);
+        setSelectedColor(e.target.value);
     }
 
     const handleDecrease = () => {
@@ -39,8 +44,8 @@ const ProductDisplay = ({ item }) => {
             name: name,
             price: price,
             quantity: prequantity,
-            size: size,
-            color: color,
+            size: selectedSize,
+            color: selectedColor,
             coupon: coupon
         }
 
@@ -61,8 +66,8 @@ const ProductDisplay = ({ item }) => {
         //reset form field
 
         setQuantity(1);
-        setSize("Select Size");
-        setColor("Select Color");
+        setSelectedSize("Select Size");
+        setSelectedColor("Select Color");
         setCoupon("");
 
 
@@ -90,7 +95,7 @@ const ProductDisplay = ({ item }) => {
             <div>
                 <form onSubmit={handleSubmit}>
                     {/*size*/}
-                    <div className='select-product size'>
+                    {/* <div className='select-product size'>
                         <select value={size} onChange={handleSizeChange}>
                             <option>Select Size</option>
                             <option value="S">S</option>
@@ -100,11 +105,11 @@ const ProductDisplay = ({ item }) => {
                             <option value="XXL">XXL</option>
                         </select>
                         <i className='icofont-rounded-down'></i>
-                    </div>
+                    </div> */}
 
 
                     {/*color*/}
-                    <div className='select-product color'>
+                    {/* <div className='select-product color'>
                         <select value={color} onChange={handleColorChange}>
                             <option>Select Color</option>
                             <option >Pink</option>
@@ -115,13 +120,45 @@ const ProductDisplay = ({ item }) => {
                         </select>
                         <i className='icofont-rounded-down'></i>
 
+                    </div> */}
+
+                    <div>
+                        {/* Size Selector */}
+                        <div className='select-product size'>
+                            <select value={selectedSize} onChange={handleSizeChange} style={{
+                                width: "150px"
+                            }}>
+                                <option>Select Size</option>
+                                {productData.size.map((sizeOption, index) => (
+                                    <option key={index} value={sizeOption}>
+                                        {sizeOption}
+                                    </option>
+                                ))}
+                            </select>
+                            <i className='icofont-rounded-down'></i>
+                        </div>
+
+                        {/* Color Selector */}
+                        <div className='select-product color'>
+                            <select value={selectedColor} onChange={handleColorChange} style={{
+                                width: "150px"
+                            }}>
+                                <option>Select Color</option>
+                                {productData.color.map((colorOption, index) => (
+                                    <option key={index} value={colorOption}>
+                                        {colorOption}
+                                    </option>
+                                ))}
+                            </select>
+                            <i className='icofont-rounded-down'></i>
+                        </div>
                     </div>
 
                     {/*cart plus minus*/}
                     <div className='cart-plus-minus'>
                         <div className='dec qtybutton' onClick={handleDecrease}>-</div>
                         <input className='cart-plus-minus-box' type="text" name="qtybutton" id="qtybutton" value={prequantity}
-                            onChange={(e) => setQuantity(parseInt(e.target.value, 10))}/>
+                            onChange={(e) => setQuantity(parseInt(e.target.value, 10))} />
                         <div className='inc qtybutton' onClick={handleIncrease}>+</div>
                     </div>
 
@@ -129,7 +166,7 @@ const ProductDisplay = ({ item }) => {
                     {/*coupon filed*/}
 
                     <div className='discount-code mb-2'>
-                        <input type="text" placeholder='Enter Discount Code' onChange={(e) => setCoupon(e.target.value)}/>
+                        <input type="text" placeholder='Enter Discount Code' onChange={(e) => setCoupon(e.target.value)} />
                     </div>
 
                     {/*button section*/}

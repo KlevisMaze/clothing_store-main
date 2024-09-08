@@ -1,17 +1,23 @@
 [
     
     {
-        "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead",
+
+        "id": "5206634888075",
         "category": "Men's Sneaker",
-        "name": "ULTRABOOST 22 SHOES",
-        "seller": "Addidas",
-        "price": 420,
+        "name": "PANTS 100COTTON",
+        "seller": "ALE",
+        "price": 10499,
+        "size": "S-8",
+        "color": "GREY",
         "stock": 20,
         "ratings": 4,
         "ratingsCount": 3725,
-        "img": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/fbaf991a78bc4896a3e9ad7800abcec6_9366/Ultraboost_22_Shoes_Black_GZ0127_01_standard.jpg",
-        "shipping": 1,
-        "quantity": 0
+        "retailPrice": 99.99,
+        "quantity": "2",
+        "img": "https://attrattivo.com/media/catalog/product/cache/7a9f1eb77930bf851f0681c5655e8242/5/2/5206634884749_1.jpg",
+        "shipping": 1
+        
+        
     },
     {
         "id": "13cbc7ed-a61b-4883-9d42-82d7d8642b86",

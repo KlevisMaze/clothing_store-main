@@ -36,8 +36,16 @@ const login = (email, password) => {
 
 //logout function
 const logOut =() => {
-  return signOut(auth);
-}
+  const auth = getAuth();
+  signOut(auth)
+      .then(() => {
+          console.log("User signed out successfully");
+      })
+      .catch((error) => {
+          console.error("Error during sign out:", error);
+      });
+};
+
 
 
 //user is avaiable or not
