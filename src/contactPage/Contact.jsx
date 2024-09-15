@@ -1,5 +1,5 @@
 import React from 'react'
-import PageHeader from '../components/PageHeader'
+import PageHEader from '../components/PageHEader'
 import GoogleMap from '../components/GoogleMap';
 
 const subTitle = "Get in touch with us";
@@ -18,7 +18,7 @@ const contactList = [
 const Contact = () => {
     return (
         <div>
-            <PageHeader title={"Get In Touch With Us"} curPage={"Contact Us"} />
+            <PageHEader title={"Get In Touch With Us"} curPage={"Contact Us"} />
             <div className='map-address-section padding-tb section-bg'>
                 <div className="container">
                     <div className="section-header text-center">
